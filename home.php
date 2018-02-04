@@ -51,6 +51,7 @@
       }
     }
     session_start();
+
     $user = $_SESSION['username'];
     //here using part of the code in cse330-php-wiki.
     //https://classes.engineering.wustl.edu/cse330/index.php?title=PHP#PHP_Language_Components
@@ -62,8 +63,8 @@
     //-----------------------------
     if(isset($_GET['logout'])){
       session_destroy();
-      header("Location: index.php");
-      echo "gotcha logout";
+      header("Location: index.html");
+      //echo "gotcha logout";
       exit;
     }
 
@@ -90,16 +91,53 @@
         deldir($dir_path);
       }
       session_destroy();
-      header("Location: login.html");
+      header("Location: index.html");
       exit;
     }
 
     if(isset($_GET['preview'])){
-
+      $filename = $_GET["filename"];
+      if($_GET["auth"]=="private"){
+        $full_download_path = sprintf("/home/grp/web_files/%s/%s", $user, $filename);
+      }else{
+        $full_download_path = sprintf("/home/grp/web_files/public/%s", $filename);
+      }
+      if(is_file($full_download_path)){
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $mime = $finfo->file($full_download_path);
+        $mimeHead = substr($mime,0,strpos($mime,"/"));
+        if($mimeHead!="application"&&$mimeHead!="inode"){
+          header("Content-Type: ".$mime);
+          readfile($full_download_path);
+        }else{
+          echo "\"$mime\" is not a valid mime type to preview.";
+          if($mime=="inode/x-empty"){
+            echo "<br><br>This is an empty file.";
+          }
+        }
+      }else{
+        echo "invalid file";
+      }
+      exit;
     }
 
     if(isset($_GET['download'])){
-
+      $filename = $_GET["filename"];
+      if($_GET["auth"]=="private"){
+        $full_download_path = sprintf("/home/grp/web_files/%s/%s", $user, $filename);
+      }else{
+        $full_download_path = sprintf("/home/grp/web_files/public/%s", $filename);
+      }
+      if(is_file($full_download_path)){
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $mime = $finfo->file($full_download_path);
+        header("Content-Type: ".$mime);
+        header("Content-Disposition:attachment;filename=".htmlentities($filename));
+        readfile($full_download_path);
+      }else{
+        echo "invalid file";
+      }
+      exit;
     }
 
     if(isset($_GET['delete'])){
@@ -131,7 +169,6 @@
       	exit;
       }
     }
-
 ?>
 
 <!DOCTYPE html>
