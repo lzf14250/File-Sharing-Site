@@ -35,7 +35,7 @@
             else{
                 //username not found
                 session_destroy('username');
-                header("refresh:1;url=login.html")
+                header("refresh:1;url=login.html");
                 echo "username not found, please enter again. click <a href="login.html">here</a> if not respond";
             }
 
