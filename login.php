@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>index.php</title>
+    <title>login.php</title>
     <meta charset="utf-8">
 </head>
 <body>
@@ -21,7 +21,7 @@
             $namefile=fopen("users.txt","r");
             while(!feof($namefile))
             {
-                if($_POST['username']==fgets($namefile))
+                if($_POST['username']==str_replace(array("\n","\r"),"",fgets($namefile)))
                 {
                     $GLOBALS['searchresult']=1;
                 }
@@ -35,7 +35,7 @@
             else{
                 //username not found
                 session_destroy();
-                header("refresh:1;url=login.html");
+                header("refresh:1;url=index.html");
                 echo "username not found, please enter again. click <a href=\"login.html\">here</a> if not respond";
             }
 

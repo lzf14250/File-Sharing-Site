@@ -13,9 +13,15 @@
             echo "<p>Click <a href=\"signup.html\">here</a> if not respond.</p>";
             header("refresh:1;url=signup.html");
         }
+        else if(!preg_match('/^[\w_\-]+$/',$_POST['username']))
+        {
+            //invalid username signup
+            echo "Invalid username!";
+            header("refresh:1;url=signup.html");
+        }
         else
         {
-            //username is not empty
+            //username is not empty and is valid
             $namefile=fopen("users.txt","r");
             while(!feof($namefile))
             {
@@ -39,8 +45,9 @@
                 fwrite($namefile,"\n");
                 fwrite($namefile,$_POST['username']);
                 fclose($namefile);
+                header("refresh:1;url=index.html");
                 echo "<p>Successfully sign up!</p>";
-                echo "<p>Click <a href=\"login.html\">here</a> if not respond.</p>";
+                echo "<p>Click <a href=\"index.html\">here</a> if not respond.</p>";
             }
         }
         ?>
