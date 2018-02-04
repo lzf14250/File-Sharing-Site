@@ -1,0 +1,42 @@
+h1{
+  text-align: center;
+}
+.user b{
+  font-size: 25px;
+}
+.account{
+  display: inline;
+}
+.account label{
+  font-size: 11px;
+  font-style: italic;
+  color: #800;
+}
+.file_title{
+  font-size: 25px;
+  font-weight: bold;
+}
+.file_list{
+  margin: 8px 50px;
+}
+.file_handle{
+  display: inline;
+  margin-left: 20px;
+}
+.file_handle input{
+  margin-left: 5px;
+}
+.no_file{
+  margin-left: 50px;
+}
+.no_file b{
+  font-style: italic;
+  color: #888;
+}
+.upload_button{
+  margin: 5px auto;
+  text-align: center;
+  width: 70px;
+  border-radius: 10px;
+  border-style:groove;
+}
