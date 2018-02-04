@@ -51,7 +51,6 @@
       }
     }
     session_start();
-    /*
     $user = $_SESSION['username'];
     //here using part of the code in cse330-php-wiki.
     //https://classes.engineering.wustl.edu/cse330/index.php?title=PHP#PHP_Language_Components
@@ -59,8 +58,7 @@
     	echo "Invalid username";
     	exit;
     }
-    */
-    $user = "cjh";
+    //$user = "cjh";
     //-----------------------------
     if(isset($_GET['logout'])){
       session_destroy();
@@ -87,7 +85,7 @@
     }
 
     if(isset($_GET['download'])){
-       
+
     }
 
     if(isset($_GET['delete'])){
