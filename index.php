@@ -29,7 +29,7 @@
             fclose($namefile);
             if($searchresult)
             {
-                header("refresh:1;url=home.php")
+                header("refresh:1;url=home.php");
                 echo "you will be redirected in about 1 second, click <a href="home.php">HERE</a> if not respond";
             }
             else{
