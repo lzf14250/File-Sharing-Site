@@ -51,7 +51,7 @@
       }
     }
     session_start();
-    
+
     $user = $_SESSION['username'];
     //here using part of the code in cse330-php-wiki.
     //https://classes.engineering.wustl.edu/cse330/index.php?title=PHP#PHP_Language_Components
@@ -63,8 +63,8 @@
     //-----------------------------
     if(isset($_GET['logout'])){
       session_destroy();
-      header("Location: index.php");
-      echo "gotcha logout";
+      header("Location: index.html");
+      //echo "gotcha logout";
       exit;
     }
 
@@ -91,7 +91,7 @@
         deldir($dir_path);
       }
       session_destroy();
-      header("Location: login.html");
+      header("Location: index.html");
       exit;
     }
 
