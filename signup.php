@@ -4,10 +4,9 @@
         <title>sign up</title>
     </head>
     <body>
-        searchresult=0;
         <?php
-        $username=$_POST['username'];
-        if($username=="")
+        $searchresult=0;
+        if($_POST['username']=="")
         {
             //username is empty
             echo "<p><h1>Please enter a username</h1></p>";
@@ -22,11 +21,11 @@
             {
                 if($_POST['username']==fgets($namefile))
                 {
-                    $searchresult=1;
+                    $GLOBALS['searchresult']=1;
                 }
             }
             fclose($namefile);
-            if($searchresult==1)
+            if($GLOBALS['searchresult']==1)
             {
                 //username has already existed
                 echo "<h1>This username has already existed</h1>";
@@ -38,7 +37,7 @@
                 //sign up a new username
                 $namefile=fopen("users.txt","a");
                 fwrite($namefile,"\n");
-                fwrite($namefile,$username);
+                fwrite($namefile,$_POST['username']);
                 fclose($namefile);
                 echo "<p>Successfully sign up!</p>";
                 echo "<p>Click <a href=\"login.html\">here</a> if not respond.</p>";
