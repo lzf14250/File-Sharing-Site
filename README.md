@@ -10,12 +10,12 @@
  - login.php : username verification in background
  - signup.html : signup entrance
  - signup.php : account signup and username verification
- ## Creative Portion
+## Creative Portion
  - new account signup : by Zhuofu Li
  - account delete/close : by Jinhao Cui
  - separated private/public files permission : by Jinhao Cui
 
- ## Links
+## Links
 ### index of the demo
 [http://cse.xited.io/~grp/module2](http://cse.xited.io/~grp/module2)
 ### users
