@@ -50,15 +50,15 @@
         rmdir($dir);
       }
     }
-    session_start();
+    session_start();/*
     $user = $_SESSION['username'];
     //here using part of the code in cse330-php-wiki.
     //https://classes.engineering.wustl.edu/cse330/index.php?title=PHP#PHP_Language_Components
     if( !preg_match('/^[\w_\-]+$/', $username) ){
     	echo "Invalid username";
     	exit;
-    }
-    //$user = "cjh";
+    }*/
+    $user = "cjh";
     //-----------------------------
     if(isset($_GET['logout'])){
       session_destroy();
@@ -69,14 +69,28 @@
 
     if(isset($_GET['close'])){
       //delete user
-
+      $userlistFile = fopen("users.txt","r");
+      $userlist = array();
+      while(!feof($userlistFile)){
+        $tmpLine = fgets($userlistFile);
+        $tmpLine = str_replace(array("\r","\n"),"",$tmpLine);
+        if($tmpLine!=$user&&$tmpLine!=""){
+          $userlist[] = $tmpLine;
+        }
+      }
+      fclose($userlistFile);
+      $userlistFile = fopen("users.txt","w");
+      foreach ($userlist as $value) {
+        fwrite($userlistFile,"$value\r\n");
+      }
+      fclose($userlistFile);
       //delete files and dir
       $dir_path = getcwd().'/../../web_files/'.$user;
       if(file_exists($dir_path)){
         deldir($dir_path);
       }
       session_destroy();
-      //header("Location: index.php");
+      header("Location: login.html");
       exit;
     }
 
