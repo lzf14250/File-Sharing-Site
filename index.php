@@ -30,13 +30,13 @@
             if($searchresult)
             {
                 header("refresh:1;url=home.php");
-                echo "you will be redirected in about 1 second, click <a href="home.php">HERE</a> if not respond";
+                echo "you will be redirected in about 1 second, click <a href=\"home.php\">HERE</a> if not respond";
             }
             else{
                 //username not found
                 session_destroy('username');
                 header("refresh:1;url=login.html");
-                echo "username not found, please enter again. click <a href="login.html">here</a> if not respond";
+                echo "username not found, please enter again. click <a href=\"login.html\">here</a> if not respond";
             }
 
         }
