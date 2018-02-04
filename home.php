@@ -50,15 +50,15 @@
         rmdir($dir);
       }
     }
-    session_start();/*
+    session_start();
     $user = $_SESSION['username'];
     //here using part of the code in cse330-php-wiki.
     //https://classes.engineering.wustl.edu/cse330/index.php?title=PHP#PHP_Language_Components
-    if( !preg_match('/^[\w_\-]+$/', $username) ){
+    if( !preg_match('/^[\w_\-]+$/', $user) ){
     	echo "Invalid username";
     	exit;
-    }*/
-    $user = "cjh";
+    }
+    //$user = "cjh";
     //-----------------------------
     if(isset($_GET['logout'])){
       session_destroy();
