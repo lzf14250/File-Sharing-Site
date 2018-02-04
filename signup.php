@@ -11,7 +11,7 @@
         {
             //username is empty
             echo "<p><h1>Please enter a username</h1></p>";
-            echo "<p>Click <a href="signup.html">here</a> if not respond.</p>";
+            echo "<p>Click <a href=\"signup.html\">here</a> if not respond.</p>";
             header("refresh:1;url=signup.html");
         }
         else
@@ -30,7 +30,7 @@
             {
                 //username has already existed
                 echo "<h1>This username has already existed</h1>";
-                echo "<p>Click <a href="signup.html">here</a> if not respond.</p>";
+                echo "<p>Click <a href=\"signup.html\">here</a> if not respond.</p>";
                 header("refresh:1;url=signup.html");
             }
             else
@@ -41,7 +41,7 @@
                 fwrite($namefile,$username);
                 fclose($namefile);
                 echo "<p>Successfully sign up!</p>";
-                echo "<p>Click <a href="login.html">here</a> if not respond.</p>";
+                echo "<p>Click <a href=\"login.html\">here</a> if not respond.</p>";
             }
         }
         ?>
