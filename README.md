@@ -1,4 +1,4 @@
-# Module 2 group part
+# Module 2 group part -- File Sharing Site
 ## Contributors And Main Work
 ### 457919 -- Jinhao Cui :
  - .htaccess : deny access to users.txt and git files
