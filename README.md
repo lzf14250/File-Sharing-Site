@@ -1,19 +1,19 @@
 # Module 2 group part
 ## Contributors And Main Work
 ### 457919 -- Jinhao Cui :
- - .htaccess : &nbsp;&nbsp;deny access to users.txt and git files
- - .gitignore : &nbsp;&nbsp;make users.txt ignored by git
- - home.php : &nbsp;&nbsp;home script of the sharing features( file handling: preview, download, delete, upload; account handling: logout, close)
- - home.css : &nbsp;&nbsp;css style for home.php
+ - .htaccess : deny access to users.txt and git files
+ - .gitignore : make users.txt ignored by git
+ - home.php : home script of the sharing features( file handling: preview, download, delete, upload; account handling: logout, close)
+ - home.css : css style for home.php
 ### 458948 -- Zhuofu Li:
- - index.html : &nbsp;&nbsp;login entrance of the file sharing site
- - login.php : &nbsp;&nbsp;username verification in background
- - signup.html : &nbsp;&nbsp;signup entrance
- - signup.php : &nbsp;&nbsp;account signup and username verification
+ - index.html : login entrance of the file sharing site
+ - login.php : username verification in background
+ - signup.html : signup entrance
+ - signup.php : account signup and username verification
  ## Creative Portion
- - new account signup : &nbsp;&nbsp;by Zhuofu Li
- - account delete/close : &nbsp;&nbsp;by Jinhao Cui
- - separated private/public files permission : &nbsp;&nbsp;by Jinhao Cui
+ - new account signup : by Zhuofu Li
+ - account delete/close : by Jinhao Cui
+ - separated private/public files permission : by Jinhao Cui
 
  ## Links
 ### index of the demo
